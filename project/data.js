@@ -316,3 +316,112 @@ const got = {
     }
   ]
 };
+
+
+let ul = document.querySelector(".btn_ul");
+let card = document.querySelector(".all_card_container");
+
+function onloadView(data) {
+  view(data);
+
+  ul.children[0].firstElementChild.classList.add("active");
+  id = 0;
+    card.innerHTML = "";
+    data.houses.forEach((el, index) => {
+      if(index == id) {
+        el.people.forEach(eachPeople => {
+          let name = eachPeople.name; 
+          
+          let desc = eachPeople.description;
+
+          let img = eachPeople.image;
+          displayCard(name, desc, img);
+        })
+      }
+
+    })
+}
+
+function fetchData(data, event) {
+
+  Array.from(ul.children).forEach(el => {
+    if(el.children[0].classList.contains("active")) {
+      el.children[0].classList.remove("active");
+    }
+  })
+  
+  event.target.classList.add("active");
+  
+    id = event.target.parentNode.dataset.id;
+    card.innerHTML = "";
+    data.houses.forEach((el, index) => {
+      if(index == id) {
+        el.people.forEach(eachPeople => {
+          let name = eachPeople.name; 
+          
+          let desc = eachPeople.description;
+
+          let img = eachPeople.image;
+          displayCard(name, desc, img);
+        })
+      }
+
+    })
+}
+
+
+
+
+
+function displayCard(name, desc, img) {
+  let cardContent = document.createElement('div');
+  cardContent.classList.add("card_container");
+
+  let media = document.createElement('div');
+  media.classList.add('media');
+
+  let leftMedia = document.createElement('div');
+  leftMedia.classList.add('media_left')
+  let image = document.createElement('img');
+  image.setAttribute("src",img);
+  leftMedia.appendChild(image);
+
+  let rightMedia = document.createElement('div');
+  rightMedia.classList.add('media_right');
+  let personName = document.createElement('p');
+  personName.classList.add("title");
+  personName.classList.add("p_name");
+  personName.innerHTML = name;
+  rightMedia.appendChild(personName);
+
+  
+  let content = document.createElement('div');
+  content.classList.add('content');
+  content.innerHTML = desc;
+
+  media.appendChild(leftMedia);
+  media.appendChild(rightMedia);
+  cardContent.appendChild(media);
+  cardContent.appendChild(content);
+
+  
+  card.appendChild(cardContent);
+  
+}
+
+function view(data) {
+    data.houses.forEach((el, index) => {
+        let li = document.createElement('li');
+        li.setAttribute("data-id", index);
+
+        let a = document.createElement('a');
+        a.innerHTML = el.name;
+
+        li.appendChild(a);
+        ul.appendChild(li);
+
+        
+
+        a.addEventListener('click', (event) => fetchData(data, event));
+    })
+}
