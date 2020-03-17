@@ -1,0 +1,248 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* My CSS */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Common */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family : BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+    color: #4a4a4a;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* position: relative; */
+}
+
+
+
+/* Header */
+
+
+.hero {
+    background-color: #3273dc;
+    color: #fff;
+}
+.banner {
+    padding: 3.6rem 1.5rem;
+    text-align: center;
+}
+
+.title {
+    line-height: 1.125rem;
+    font-weight: 600;
+    font-size: 2rem;
+    
+}
+
+/* Buttons */
+
+.btn_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    margin-left: 7%;
+    /* overflow-x: scroll; */
+}
+.flex2 {
+    display: flex;
+    justify-content: center;
+    
+    margin-bottom: 3rem;
+    
+}
+
+.btn_wrapper a{
+    border: 1px solid #dbdbdb;  
+    border-left-width: 0.5px;
+    border-right-width: 0px;
+    margin-bottom: 0;
+    position: relative;
+    /* color: #4a4a4a; */
+}
+
+
+
+li:first-child a {
+    border-bottom-left-radius: 290486px;
+    border-top-left-radius: 290486px;
+    border-left-width: 1px;
+    padding-left: 35px;
+    
+}
+
+li:last-child a {
+    border-bottom-right-radius: 290486px;
+    border-top-right-radius: 290486px;
+    border-right-width: 1px;
+   
+}
+
+
+.btn_wrapper a {
+    align-items: center;
+    display: flex;
+    padding: 0.5em 1em;
+    vertical-align: top;
+    align-items: center;
+    color: #4a4a4a;
+    cursor: pointer;
+}
+
+.btn_wrapper a:hover {
+    background-color: rgb(245, 245, 245);
+    border-color:  rgb(173, 171, 171);
+    box-sizing: border-box;
+    border-right-width: 0.5px;
+}
+
+
+li a {
+    flex-grow: 1;
+    color: #fff;
+    padding: 8px 16px 20px 8px;
+}
+
+/* .card_container {
+    
+    margin: 15% 0%;
+    width: 200px;
+    
+} */
+
+/* Cards */
+
+ul.all_card_container.flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+
+    
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+    line-height: 2;
+}
+
+.media_left {
+    flex-basis: 25%;
+    margin-right: 1rem;
+    
+}
+
+img {
+    width: 3rem;
+}
+
+.media_right {
+
+    flex-basis: 20%;
+}
+
+.p_name{
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.7rem;
+}
+
+.content {
+    width: 200px;
+    height: auto;
+}
+
+a.active {
+    background-color:  #3273dc;
+    color: #fff;
+    border-color: #3273dc;  
+    border-right-width: 0px;
+    border-left-width: 0px;
+}
+
+a.active:hover {
+    background-color:  #3273dc;
+    color: #fff;
+    border-color:  #3273dc;  
+    /* border-right-width: 0px;
+    border-left-width: 0px; */
+}
+
+.card_container {
+    flex-basis: 20%;
+    margin: 2%;
+    margin-top: 0;
+    margin-bottom: 100px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+                0 0px 0 1px rgba(10, 10, 10, 0.02);
+    padding: 20px;
+}
+
+
+
+
+
